@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.admin.riviera">
+    <uses-permission android:name="android.permission.INTERNET">
+    </uses-permission>
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/riviera"
+        android:label="Турагентство Ривьера"
+        android:roundIcon="@mipmap/riviera"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".TopLevelActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".OfficesCategoryActivity"
+            android:label="@string/category_label"
+            android:parentActivityName=".TopLevelActivity" />
+        <activity
+            android:name=".OfficesActivity"
+            android:label="@string/category_label"
+            android:parentActivityName=".OfficesCategoryActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".OfficesCategoryActivity" />
+        </activity>
+        <activity
+            android:name=".AboutUs"
+            android:label="@string/aboutus"
+            android:parentActivityName=".TopLevelActivity">
+        </activity>
+        <activity android:name=".SearchActivity"
+            android:label="@string/search">
+        </activity>
+    </application>
+
+</manifest>
